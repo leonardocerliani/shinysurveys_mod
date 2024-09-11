@@ -19,9 +19,9 @@ addRequiredUI_internal <- function(df) {
   }
 
   if (df$required[1] == TRUE) {
-    label <- shiny::tagList(base::unique(df$question), shiny::span("*", class = "required"))
+    label <- shiny::tagList(shiny::HTML(base::unique(df$question)), shiny::span("*", class = "required"))
   } else if (df$required[1] == FALSE) {
-    label <- base::unique(df$question)
+    label <- shiny::HTML(base::unique(df$question))
   }
   return(label)
 }
